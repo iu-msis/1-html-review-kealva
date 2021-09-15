@@ -37,7 +37,7 @@
 <h2 class = "container">
     Tables
 </h2>
-<table class="container">
+<table id="twTable" class="container">
     <thead>
       <tr>
         <th scope="col">Title</th>
@@ -131,5 +131,9 @@
     Copyright of Kevin Alvarado // Made by Kevin Alvarado
   </footer>
 </main>
+<script src="js/tablesort.min.js"></script>
+<script>
+  new Tablesort(document.getElementById("twTable"));
+</script>
 </body>
 </html>
