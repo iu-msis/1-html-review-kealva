@@ -1,12 +1,20 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
-<!--bootstrap-->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <!-- <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
+
+  <!-- <script src="https://unpkg.com/vue@next"></script> -->
+
   <!--custom css-->
   <link href="css/style.css" rel="stylesheet" type="text/css"/>
+  <script src="https://unpkg.com/vue@next"></script>
   <title>Hw1</title>  
   </head>
     <body>
@@ -14,16 +22,47 @@
       <header class = "row">
         <h1>Home Page</h1>
       </header>
-        <nav class = "row navbar navbar-default">
-          <div class = "navbar-header">
-            <button class = "navbar-toggle" data-toggle="collapse" data-target="#DASMenu">
-              <span class = "icon-bar"></span>
-              <span class = "icon-bar"></span>
-              <span class = "icon-bar"></span>
-              <span class = "icon-bar"></span>
-            </button>
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+          <!-- <a class="navbar-brand" href="#">Navbar</a> -->
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="user_information.html">User</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="tables.html">Table</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="favorite.html">Favorites</a>
+              </li>
+            </ul>
           </div>
-        <div class = "collapse navbar-collapse" id="DASMenu">
+        </div>
+      </nav>
+      
+
+
+
+
+
+
+        <!-- <nav class = "row navbar navbar-default">
+          <div class = "navbar-header"> -->
+            <!-- <button class = "navbar-toggle" data-toggle="collapse" data-target="#DASMenu">
+              <span class = "icon-bar"></span>
+              <span class = "icon-bar"></span>
+              <span class = "icon-bar"></span>
+              <span class = "icon-bar"></span>
+            </button> -->
+          <!-- </div> -->
+        <!-- <div class = "collapse navbar-collapse" id="DASMenu">
           <ul class="nav navbar-nav">
             <li><a href = "index.html"> Homepage </a></li>
             <li><a href = "user_information.html"> User Information </a></li> 
@@ -33,24 +72,39 @@
         </div>
         </nav>
       </div>
-    <main class="container">
+    <main class="container"> -->
 
-     <div class="text-center">
+     <!-- <div class="text-center">
             <img src="image/93.jpg" class="rounded">
-     </div>
-     <div>
-            <h3>Alberto Justo</h3>
+     </div> -->
+     <div id="someApp">
+            <!-- <h3>Alberto Justo</h3> -->
               <ul>
-                <p class= "list_links">Country Origin: United States</a></p>
-                <p class= "list_links">Date of Birth: 9/5/1953</a></p>
-                <p class= "list_links">Age: 67</a></p>
-                <p class= "list_links">Email: alberto_justo@gmail.com</a></p>
+
+                <p><a v-bind:href = "dataP.picture.large"> <img v-bind:src = "dataP.picture.large"/></a></p>
+                <p class= "list_links">Name: {{dataP.name.first+" "+dataP.name.last}}</a></p>
+                <p class= "list_links">Country Origin: {{dataP.location.country}}</a></p>
+                <p class= "list_links">Date of Birth: {{prettyBirthday}}</a></p>
+                <p class= "list_links">Age: {{dataP.dob.age}}</a></p>
+                <p class= "list_links">Email: {{dataP.email}}</a></p>
                 <p class="list_links"> <a href="mailto:someone@yoursite.com">Email Us</a></p>
-              </ul>
+              </ul> 
+ <!-- <script src="js/index.js"></script>     -->
+            
      </div>
     </main>
         <footer class="container">
           Copyright of Kevin Alvarado // Made by Kevin Alvarado
         </footer>
+
+ <!--  Bootstrap Bundle with Popper -->
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+ <script src="https://unpkg.com/dayjs@1.8.21/dayjs.min.js"></script>
+
+
+ 
+ <script src="js/index.js"></script>
+
+
     </body>
 </html>
