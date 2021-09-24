@@ -58,6 +58,10 @@
                 <p class= "list_links">Email: {{dataP.email}}</a></p>
                 <p class="list_links"> <a href="mailto:someone@yoursite.com">Email Us</a></p>
               </ul> 
+
+              <form v-on:submit.prevent="fetchUserData">
+                <button type="submit">Refresh</button>
+              </form>
  <!-- <script src="js/index.js"></script>     -->
             
      </div>
