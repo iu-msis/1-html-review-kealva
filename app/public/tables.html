@@ -46,15 +46,15 @@
           </div>
         </div>
       </nav>
-<div class=constainer>
+<div class=container>
 <h2 class = "container">
     Tables
 </h2>
-<table id="twTable" class="container">
+<table id="SomeApp" class="container">
     <thead>
       <tr>
         <th scope="col">Title</th>
-        <th scope="col">Author(s)</th>
+        <th scope="col">Authors</th>
         <th scope="col">Year Published</th>
         <th scope="col">Publisher</th>
         <th scope="col">Page Count</th>
@@ -62,8 +62,18 @@
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <!-- <th scope="row">1</th> -->
+      <tr v-for="b in books">
+        <th scope="row">{{ b.title }}</th>
+        <td>{{ b.authors }}</td>
+        <td>{{ b.yrpublished }}</td>
+        <td>{{ b.publisher }}</td>
+        <td>{{ b.pagect }}</td>
+        <td>{{ prettyDollar(b.MSRP)}} </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+        <!-- <th scope="row">1</th>
         <td>Twilight </td>
         <td>Stephenie Meyer</td>
         <td>2005</td>
@@ -72,7 +82,7 @@
         <td>10.99</td>
       </tr>
       <tr>
-        <!-- <th scope="row">2</th> -->
+        <th scope="row">2</th>
         <td>New Moon</td>
         <td>Stephenie Meyer</td>
         <td>2006</td>
@@ -81,7 +91,7 @@
         <td>16.99</td>
       </tr>
       <tr>
-        <!-- <th scope="row">3</th> -->
+        <th scope="row">3</th>
         <td>Eclipse</td>
         <td>Stephenie Meyer</td>
         <td>2007</td>
@@ -90,7 +100,6 @@
         <td>9.99</td>
       </tr>
       <tr>
-        <!-- <th scope="row">4</th> -->
         <td>Breaking Dawn</td>
         <td>Stephenie Meyer</td>
         <td>2008</td>
@@ -100,7 +109,7 @@
       </tr>
     </tbody>
   </table>
-</div>
+</div> -->
 <br>
 </br>
 <main class="container">
@@ -144,9 +153,9 @@
     Copyright of Kevin Alvarado // Made by Kevin Alvarado
   </footer>
 </main>
-<script src="js/tablesort.min.js"></script>
+<script src="js/index.js"></script>
 <script>
-  new Tablesort(document.getElementById("twTable"));
+  new Tablesort(document.getElementById("SomeApp"));
 </script>
 </body>
 </html>

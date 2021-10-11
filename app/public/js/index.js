@@ -2,36 +2,43 @@
 const SomeApp = {
     data() {
       return {
-        "dataP": {},
-        list: [5,6,7,8],
-        message: "Waiting ..."
+        books: [],
+        selectedBook: null,
+        offers: [],
+        offerForm: {}
       }
     },
-    computed: {
-        prettyBirthday() {
-            return dayjs(this.dataP.dob.date)
-            .format('D MMM YYYY')
-        }
-    },
+    computed: {},
     methods: {
-        fetchUserData() {
-            //Method 1:
-            fetch('https://randomuser.me/api/')
-            .then(response => response.json())
-            .then((json) => {
-                console.log("Got json back:", json);
-                this.dataP = json.results[0];
-                console.log("C");
+
+        prettyDollar(n) {
+            const d = new Intl.NumberFormat("en-US").format(n);
+            return "$ " + d;
+        },
+        // selectBook(s) {
+        //     if (s == this.selectedBook) {
+        //         return;
+        //     }
+        //     this.selectedBook = s;
+        //     this.book = [];
+        //     this.fetchBookData(this.selectedBook);
+        // },
+        fetchBookData() {
+            fetch('/api/books/')
+            .then( response => response.json() )
+            .then( (responseJson) => {
+                console.log(responseJson);
+                this.books = responseJson;
             })
-            .catch( (error) => {
-                console.error(error);
-            });
-        }
+            .catch( (err) => {
+                console.error(err);
+            })
+        },
     },
     created() {
-        return this.fetchUserData();
+        this.fetchBookData();
     }
-
-  }
   
-  Vue.createApp(SomeApp).mount('#someApp');
+}
+  
+  Vue.createApp(SomeApp).mount('#SomeApp');
