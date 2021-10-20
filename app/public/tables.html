@@ -47,10 +47,11 @@
         </div>
       </nav>
 <div class=container>
+<div id="SomeApp">
 <h2 class = "container">
     Tables
 </h2>
-<table id="SomeApp" class="container">
+<table class="container">
     <thead>
       <tr>
         <th scope="col">Title</th>
@@ -72,7 +73,36 @@
       </tr>
     </tbody>
   </table>
+  <form v-on:submit.prevent="postNewBook">
+    <div class="mb-3">
+      <label for="title" class="form-label">Title</label>
+      <input type="text" v-model="offerForm.title"
+       class="form-control" id="title">
+    </div>
+    <div class="mb-3">
+      <label for="authors" class="form-label">Authors</label>
+      <input type="text" v-model="offerForm.authors" class="form-control" id="authors">
+    </div>
+    <div class="mb-3">
+      <label for="publisher" class="form-label">Publisher</label>
+      <input type="text" v-model="offerForm.publisher" class="form-control" id="publisher">
+    </div>
+    <div class="mb-3">
+      <label for="yrpublished" class="form-label">Year Published</label>
+      <input type="number" v-model="offerForm.yrpublished" class="form-control" id="yrpublished">
+    </div> 
+    <div class="mb-3">
+      <label for="pagect" class="form-label">Page Count</label>
+      <input type="number" v-model="offerForm.pagect" class="form-control" id="pagect">
+    </div>
+    <div class="mb-3">
+      <label for="MSRP" class="form-label">MSRP</label>
+      <input type="number" v-model="offerForm.MSRP" class="form-control" id="MSRP">
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
 </div>
+</div>  
         <!-- <th scope="row">1</th>
         <td>Twilight </td>
         <td>Stephenie Meyer</td>
